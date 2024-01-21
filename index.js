@@ -223,8 +223,8 @@ app.get("/friends/:UserId", async (req, res) => {
     //       encrytionstring: friend[1],
     //     });
     //   }
-      // console.log(friend[0]);
-    }
+    // console.log(friend[0]);
+    // }
     // console.log(friendsDetails);
     // console.log(friends);
     // return res.json(acceptedFriends);
