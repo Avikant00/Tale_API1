@@ -227,7 +227,7 @@ app.get("/friends/:UserId", async (req, res) => {
     }
     console.log(friendsDetails);
     console.log(friends);
-    return res.json(acceptedFriends);
+
     res.status(200).json({ friendsDetails });
   } catch (err) {
     console.log("Error in fetching friends:", err);
