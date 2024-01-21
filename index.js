@@ -207,27 +207,28 @@ app.get("/friends/:UserId", async (req, res) => {
     const user = await User.findById(UserId);
     const friends = user.Friends;
     const friendsDetails = [];
-    for (let friend of friends) {
-      // Find the friend document by friend id
-      const friendDoc = await User.findById(friend[0]);
+    console.log(friends);
+    // for (let friend of friends) {
+    //   // Find the friend document by friend id
+    //   const friendDoc = await User.findById(friend[0]);
 
-      // Check if the friend exists
-      if (friendDoc) {
-        // Push the friend details to the array
-        friendsDetails.push({
-          Name: friendDoc.Name,
-          Gmail: friendDoc.Gmail,
-          Images: friendDoc.Images,
-          _id: friendDoc._id,
-          encrytionstring: friend[1],
-        });
-      }
+    //   // Check if the friend exists
+    //   if (friendDoc) {
+    //     // Push the friend details to the array
+    //     friendsDetails.push({
+    //       Name: friendDoc.Name,
+    //       Gmail: friendDoc.Gmail,
+    //       Images: friendDoc.Images,
+    //       _id: friendDoc._id,
+    //       encrytionstring: friend[1],
+    //     });
+    //   }
       // console.log(friend[0]);
     }
-    console.log(friendsDetails);
+    // console.log(friendsDetails);
     // console.log(friends);
     // return res.json(acceptedFriends);
-    res.status(200).json({ friendsDetails });
+    // res.status(200).json({ friendsDetails });
   } catch (err) {
     console.log("Error in fetching friends:", err);
     res.status(500).json({ Message: "Some Internal Error" });
